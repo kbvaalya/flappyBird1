@@ -9,26 +9,18 @@ The goal was to recreate the core gameplay — a bird flying through randomly ge
 The game includes:
 
 Real-time animation loop using AnimationTimer
-
 Physics simulation with gravity and jump mechanics
-
 Collision detection with pipes and screen boundaries
-
 Dynamic score tracking and restart functionality
 
 
 This project was created as part of a learning exercise in game development and GUI programming in Java.
 
 Design Choices
-
 JavaFX over Swing: JavaFX offers smoother rendering and native support for scenes, nodes, and animations.
-
 Image-based bird: Instead of using geometric shapes, the bird uses an image (bird.png) with transparent background to give a more realistic appearance.
-
 Simple rectangles for pipes: Using Rectangle nodes keeps the logic lightweight and efficient.
-
 Layer management: Text elements (scoreText, gameOverText) are always kept in the front layer using toFront() to ensure visibility.
-
 Procedural level generation: Each new pipe pair’s gap position is randomized for variety.
 
 Challenges Faced
@@ -44,20 +36,15 @@ Algorithms and Data Structures
 Data Structure:
 
 ArrayList<PipePair> stores all active pipe pairs currently visible on the screen.
-
 Each PipePair contains two Rectangle objects (top and bottom pipes) and a boolean scored flag.
 
 
 Algorithmic Logic:
 
 Game Loop: Implemented using AnimationTimer — executes ~60 times per second, calling update().
-
 Physics: Bird velocity updated each frame → birdVy += GRAVITY, then applied via bird.setY(bird.getY() + birdVy).
-
 Collision: Checked via intersects() between bird’s bounds and each pipe’s bounds.
-
 Pipe Generation: Random gap height using Random.nextDouble(), ensuring gaps remain within safe limits.
-
 Score Tracking: Incremented when the bird passes a pipe (if (!scored && pipePassed)).
 
 Improvements & File Usage
@@ -94,6 +81,9 @@ Input: Press SPACE (or click mouse) to jump during gameplay.
 Output: The window displays score and "Game Over" message dynamically.
 
 Transparency: Bird image must be a .png with alpha channel to appear clean on screen.
+
+Video link 
+https://drive.google.com/file/d/18Pymv0N2Yqk8QesLzo_t9fat1ZI2ZDCk/view?usp=drivesdk
 
 Author
 
